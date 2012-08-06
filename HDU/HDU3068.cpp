@@ -1,3 +1,4 @@
+// 用Manacher算法求最长回文子串
 #include <cstdio>
 #include <iostream>
 #include <cstring>
