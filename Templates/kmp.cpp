@@ -41,7 +41,7 @@ int kmp( char *s, char *t )
   {
     if ( j < 0 || s[ i ] == t[ j ] )
     {
-      ++j, ++j;
+      ++i, ++j;
     }
     else j = next[ j ];
     if ( j == lent ) return i - j;
