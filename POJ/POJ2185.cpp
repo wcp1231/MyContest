@@ -1,5 +1,6 @@
 // KMP的应用，每行求出寻环节，然后取各行里共有的最小值
 // 然后竖着再用一次KMP求高度
+// 不过里边的kmp的写法似乎不是原版kmp也不是改进版kmp。。。
 #include <cstdio>
 #include <iostream>
 #include <cstring>
