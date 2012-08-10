@@ -42,7 +42,7 @@ class NetworkFlow_Dinic {
 		q.add( S );
 		while ( !q.isEmpty() ) {
 			int p = q.poll();
-			for ( int i = 0; i <= T; i++ ) if ( dis[ i ] != -1 && cap[ p ][ i ] > 0 ) {
+			for ( int i = 0; i <= T; i++ ) if ( dis[ i ] == -1 && cap[ p ][ i ] > 0 ) {
 				dis[ i ] = dis[ p ] + 1;
 				q.add( i );
 			}
