@@ -10,7 +10,9 @@ class NetworkFlow_Dinic {
 		this.m = m;
 		cap = new int[ n ][ m ];
 	}
-	public int getMaxFlow() {
+	public int getMaxFlow( int s, int t ) {
+        S = s;
+        T = t;
 		int res = 0;
 		while ( bfs() ) {
 			res += dfs( S, Integer.MAX_VALUE );
