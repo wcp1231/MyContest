@@ -1,3 +1,6 @@
+/*
+  改为多路增广
+*/
 class NetworkFlow_Dinic {
 	
 	int n, m;
@@ -20,19 +23,20 @@ class NetworkFlow_Dinic {
 		return res;
 	}
 	public int dfs( int u, int f ) {
-		int flow;
+		int flow, w = 0;
 		if ( u == T ) return f;
-		for ( int i = 0; i <= T; i++ ) {
+		for ( int i = 0; i <= T && f-w > 0; i++ ) {
 			if ( cap[ u ][ i ] > 0 && dis[ i ] == dis[ u ] + 1) {
-				flow = dfs( i, Math.min( cap[ u ][ i ], f ) );
-				if ( flow > 0 ) {
+				flow = dfs( i, Math.min( cap[ u ][ i ], f-w ) );
+				if ( flow == 0 ) dis[ i ] = -1;
+                else {
+                    w += flow;
 					cap[ u ][ i ] -= flow;
 					cap[ i ][ u ] += flow;
-					return flow;
 				}
 			}
 		}
-		return 0;
+		return w;
 	}
 	public boolean bfs() {
 		LinkedList<Integer> q = new LinkedList< Integer >();
