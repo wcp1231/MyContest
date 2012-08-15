@@ -1,3 +1,8 @@
+
+
+
+
+
 /*
   java 超时版
 */
@@ -44,7 +49,7 @@ class HDU4364 {
 			}
 			res ^= temp;
 		}
-		return res;
+		return res & 255;
 	}
 }
 class InputReader {
