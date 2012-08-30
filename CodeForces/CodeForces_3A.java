@@ -12,18 +12,10 @@ class CodeForces_3A {
 		while ( x != 0 && y != 0 ) {
 			String res = "";
 			if ( x > 0 ) {res += "L"; x--;}
-			else {res += "R"; x++;}
+			else if ( x < 0 ) {res += "R"; x++;}
 			if ( y > 0 ) {res += "D"; y--;}
-			else {res += "U"; y++;}
+			else if ( y < 0 ) {res += "U"; y++;}
 			ps.println( res );
-		}
-		while ( x != 0 ) {
-			if ( x > 0 ) {ps.println("L"); x--;}
-			else {ps.println("R"); x++;}
-		}
-		while ( y != 0 ) {
-			if ( y > 0 ) {ps.println("D"); y--;}
-			else {ps.println("U"); y++;}
 		}
 	}
 }
